@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "author": "KenKout",
+    "description": "KenKout's plugin repository"
+  },
+  "data": [
+    {
+      "name": "Fanqie API Translate",
+      "author": "KenKout",
+      "path": "https://raw.githubusercontent.com/devanenWl/fanqie_vbook/main/plugin.zip",
+      "version": 1,
+      "source": "https://fanqienovel.com",
+      "icon": "https://raw.githubusercontent.com/devanenWl/fanqie_vbook/main/icon.png",
+      "description": "Fanqie novel with translation support",
+      "type": "chinese_novel",
+      "locale": "zh_CN"
+    }
+  ]
+}

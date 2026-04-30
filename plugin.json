@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "name": "Fanqie API Translate",
+    "author": "KenKout",
+    "version": 1,
+    "source": "https://fanqienovel.com",
+    "regexp": "(fanqie|fqapi).*?/(page|info).*?",
+    "description": "Fanqie novel with translation support",
+    "locale": "zh_CN",
+    "language": "javascript",
+    "type": "chinese_novel"
+  },
+  "script": {
+    "home": "home.js",
+    "detail": "detail.js",
+    "genre": "genre.js",
+    "toc": "toc.js",
+    "search": "search.js",
+    "chap": "chap.js"
+  },
+  "config": {
+    "thread_num": 50,
+    "delay": 10,
+    "baseUrl": {
+      "title": "Base URL",
+      "mode": "input",
+      "format": "text",
+      "default": "http://localhost:9999"
+    },
+    "openaiApiKey": {
+      "title": "OpenAI API Key",
+      "mode": "input",
+      "format": "text",
+      "default": "sk-key"
+    },
+    "openaiBaseUrl": {
+      "title": "OpenAI Base URL",
+      "mode": "input",
+      "format": "text",
+      "default": "https://api.openai.com/v1"
+    },
+    "openaiParams": {
+      "title": "OpenAI Parameters (JSON)",
+      "mode": "input",
+      "format": "text",
+      "default": "{\n  \"model\": \"gpt-3.5-turbo\",\n  \"temperature\": 0.7,\n  \"max_tokens\": 8192\n}"
+    },
+    "enableTranslation": {
+      "title": "Enable Translation",
+      "mode": "input",
+      "format": "text",
+      "default": "false"
+    },
+    "systemPrompt": {
+      "title": "System Prompt (Optional, leave blank to use default)",
+      "mode": "input",
+      "format": "text",
+      "default": ""
+    },
+    "nameMapping": {
+      "title": "Name Mapping (JSON: {\"Chinese\": \"Vietnamese\"})",
+      "mode": "input",
+      "format": "text",
+      "default": "{}"
+    }
+  }
+}
