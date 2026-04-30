@@ -5,7 +5,7 @@
     "version": 2,
     "source": "https://fanqienovel.com",
     "regexp": "(fanqie|fqapi).*?/(page|info).*?",
-    "description": "Fanqie novel with translation support",
+    "description": "Fanqie API",
     "locale": "zh_CN",
     "language": "javascript",
     "type": "chinese_novel"
