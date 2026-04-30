@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "name": "Fanqie API Translate",
-    "author": "KenKout",
-    "version": 1,
+    "name": "Fanqie API",
+    "author": "Ken",
+    "version": 2,
     "source": "https://fanqienovel.com",
     "regexp": "(fanqie|fqapi).*?/(page|info).*?",
     "description": "Fanqie novel with translation support",
@@ -19,7 +19,7 @@
     "chap": "chap.js"
   },
   "config": {
-    "thread_num": 50,
+    "thread_num": 5,
     "delay": 10,
     "baseUrl": {
       "title": "Base URL",
