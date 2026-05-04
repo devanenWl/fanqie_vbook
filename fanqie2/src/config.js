@@ -1,13 +1,9 @@
 let config_host = "https://fanqienovel.com"
-let chap_host = "http://localhost:9999"
 let chap_api_url = "http://localhost:8080"
 let api_key = ""
 let enable_translation = false
 let target_lang = "vi_enhanced"
 
-if (typeof baseUrl !== "undefined" && baseUrl !== '""') {
-    chap_host = baseUrl.replace(/(^")|("$)/g, '')
-}
 if (typeof chapApiUrl !== "undefined" && chapApiUrl !== '""') {
     chap_api_url = chapApiUrl.replace(/(^")|("$)/g, '')
 }

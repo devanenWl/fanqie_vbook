@@ -21,12 +21,6 @@
   "config": {
     "thread_num": 5,
     "delay": 10,
-    "baseUrl": {
-      "title": "Base URL (Fanqie Proxy)",
-      "mode": "input",
-      "format": "text",
-      "default": "http://localhost:9999"
-    },
     "chapApiUrl": {
       "title": "Chapter API URL",
       "mode": "input",
