@@ -2,7 +2,7 @@
   "metadata": {
     "name": "Fanqie API v2",
     "author": "Ken",
-    "version": 4,
+    "version": 6,
     "source": "https://fanqienovel.com",
     "regexp": "(fanqie|fqapi).*?/(page|info).*?",
     "description": "Fanqie API v2 (native translate endpoint)",

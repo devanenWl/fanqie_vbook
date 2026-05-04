@@ -6,13 +6,13 @@ function formatChapterContent(raw) {
         .replace(/<footer[\s\S]*?<\/footer>/gi, "")
         .replace(/<\/?article[^>]*>/gi, "")
         .replace(/<(h1|p|div|section|blockquote)[^>]*>/gi, "")
-        .replace(/<\/(h1|p|div|section|blockquote)>/gi, "\n\n")
+        .replace(/<\/(h1|p|div|section|blockquote)>/gi, "\n")
         .replace(/<br\s*\/?>/gi, "\n")
         .replace(/<[^>]+>/g, "")
         .replace(/\r/g, "")
-        .replace(/\n{3,}/g, "\n\n")
+        .replace(/\n{2,}/g, "\n")
         .trim()
-        .replace(/\n/g, "<br>");
+        .replace(/\n/g, "<br><br>");
 }
 
 function execute(url) {
