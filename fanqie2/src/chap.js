@@ -21,7 +21,7 @@ function execute(url) {
         try {
             let json = response.json();
             let raw = json.data.content;
-            let content = raw.replace(/<[^>]+>/g, "").replace(/\n/g, "<br><br>");
+            let content = raw.replace(/<\/p>/gi, "\n").replace(/<[^>]+>/g, "").replace(/\n/g, "<br><br>");
             return Response.success(content);
         } catch (e) {
             return Response.error("Failed to parse chapter response: " + e.message);
