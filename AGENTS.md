@@ -61,6 +61,26 @@ git commit -m "chore(fanqie2): rebuild plugin.zip"
 git push origin main
 ```
 
+### Version Bump
+
+Always bump the plugin version in `plugin.json` and `repository.json` when making changes:
+
+1. Update `version` in `<plugin-folder>/plugin.json`
+2. Update `version` in `repository.json` for the matching plugin entry
+3. Rebuild the ZIP
+4. Commit and push all changes together
+
+Example:
+```bash
+# Edit plugin.json and repository.json to bump version
+cd fanqie2
+zip -r plugin.zip plugin.json icon.png src/
+cd ..
+git add fanqie2/ repository.json
+git commit -m "fix(fanqie2): description of change + version bump"
+git push origin main
+```
+
 The ZIP structure must look like this (verified with `unzip -l plugin.zip`):
 ```
 plugin.json
