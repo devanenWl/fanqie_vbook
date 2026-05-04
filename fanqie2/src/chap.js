@@ -1,14 +1,5 @@
 load('config.js');
 
-function escapeHtml(text) {
-    return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
 function execute(url) {
     const regex = /(?:item_id=|\/)(\d+)$/;
     let chap_id = url.match(regex)[1];
@@ -29,8 +20,8 @@ function execute(url) {
     if (response.ok) {
         try {
             let json = response.json();
-            let raw = enable_translation ? json.content : json.data.content;
-            let content = escapeHtml(raw).replace(/\n/g, "<br><br>");
+            let raw = json.data.content;
+            let content = raw.replace(/<[^>]+>/g, "").replace(/\n/g, "<br><br>");
             return Response.success(content);
         } catch (e) {
             return Response.error("Failed to parse chapter response: " + e.message);
