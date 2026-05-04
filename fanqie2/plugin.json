@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "name": "Fanqie API v2",
+    "author": "Ken",
+    "version": 1,
+    "source": "https://fanqienovel.com",
+    "regexp": "(fanqie|fqapi).*?/(page|info).*?",
+    "description": "Fanqie API v2 (native translate endpoint)",
+    "locale": "zh_CN",
+    "language": "javascript",
+    "type": "chinese_novel"
+  },
+  "script": {
+    "home": "home.js",
+    "detail": "detail.js",
+    "genre": "genre.js",
+    "toc": "toc.js",
+    "search": "search.js",
+    "chap": "chap.js"
+  },
+  "config": {
+    "thread_num": 5,
+    "delay": 10,
+    "baseUrl": {
+      "title": "Base URL (Fanqie Proxy)",
+      "mode": "input",
+      "format": "text",
+      "default": "http://localhost:9999"
+    },
+    "chapApiUrl": {
+      "title": "Chapter API URL",
+      "mode": "input",
+      "format": "text",
+      "default": "http://localhost:8080"
+    },
+    "apiKey": {
+      "title": "API Key (X-API-Key)",
+      "mode": "input",
+      "format": "text",
+      "default": ""
+    },
+    "enableTranslation": {
+      "title": "Enable Translation",
+      "mode": "input",
+      "format": "text",
+      "default": "false"
+    },
+    "targetLang": {
+      "title": "Target Language",
+      "mode": "input",
+      "format": "text",
+      "default": "vi_enhanced"
+    }
+  }
+}

@@ -14,6 +14,17 @@
       "description": "Fanqie API",
       "type": "chinese_novel",
       "locale": "zh_CN"
+    },
+    {
+      "name": "Fanqie API v2",
+      "author": "Ken",
+      "path": "https://raw.githubusercontent.com/devanenWl/fanqie_vbook/main/fanqie2/plugin.zip",
+      "version": 1,
+      "source": "https://fanqienovel.com",
+      "icon": "https://raw.githubusercontent.com/devanenWl/fanqie_vbook/main/fanqie2/icon.png",
+      "description": "Fanqie API v2 (native translate endpoint)",
+      "type": "chinese_novel",
+      "locale": "zh_CN"
     }
   ]
 }
