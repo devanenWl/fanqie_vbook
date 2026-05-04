@@ -1,5 +1,20 @@
 load('config.js');
 
+function formatChapterContent(raw) {
+    return raw
+        .replace(/<header[\s\S]*?<\/header>/gi, "")
+        .replace(/<footer[\s\S]*?<\/footer>/gi, "")
+        .replace(/<\/?article[^>]*>/gi, "")
+        .replace(/<(h1|p|div|section|blockquote)[^>]*>/gi, "")
+        .replace(/<\/(h1|p|div|section|blockquote)>/gi, "\n\n")
+        .replace(/<br\s*\/?>/gi, "\n")
+        .replace(/<[^>]+>/g, "")
+        .replace(/\r/g, "")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim()
+        .replace(/\n/g, "<br>");
+}
+
 function execute(url) {
     const regex = /(?:item_id=|\/)(\d+)$/;
     let chap_id = url.match(regex)[1];
@@ -21,7 +36,7 @@ function execute(url) {
         try {
             let json = response.json();
             let raw = json.data.content;
-            let content = raw.replace(/<\/p>/gi, "\n").replace(/<[^>]+>/g, "").replace(/\n/g, "<br><br>");
+            let content = formatChapterContent(raw);
             return Response.success(content);
         } catch (e) {
             return Response.error("Failed to parse chapter response: " + e.message);
