@@ -4,24 +4,41 @@
 
 This is a **vBook extension plugin** for the vBook novel reader app (Android). The extension provides a source for reading novels from Fanqie (fanqienovel.com) with optional Chinese-to-Vietnamese translation via OpenAI.
 
-## Project Structure
+## Repository Structure
+
+This repo hosts multiple vBook plugins. Each plugin lives in its own subfolder.
+`repository.json` at the root lists all plugins for discovery.
 
 ```
-├── plugin.json        # Plugin metadata, config definitions, script mappings
-├── icon.png           # Plugin icon
-├── src/
-│   ├── config.js      # Shared config: reads plugin.json config values at runtime
-│   ├── home.js        # Homepage categories → list of book sources
-│   ├── gen.js         # Book list from Fanqie API (rankings, latest, etc.)
-│   ├── gen2.js        # Book list from category/genre API (paginated)
-│   ├── detail.js      # Book detail page: info, genres, suggests, comments
-│   ├── search.js      # Search by keyword
-│   ├── genre.js       # Genre/category listing
-│   ├── toc.js         # Table of contents (chapter list)
-│   ├── chap.js        # Chapter content (with optional OpenAI translation)
-│   ├── comment.js     # Book comments/reviews
-│   └── suggest.js     # Suggestions (same author books)
+├── repository.json        # Plugin registry (consumed by vBook app to list all plugins)
+├── fanqie/                # Fanqie API plugin
+│   ├── plugin.json        # Plugin metadata, config definitions, script mappings
+│   ├── icon.png           # Plugin icon
+│   ├── plugin.zip         # Built plugin ZIP (committed after each build)
+│   └── src/
+│       ├── config.js      # Shared config: reads plugin.json config values at runtime
+│       ├── home.js        # Homepage categories → list of book sources
+│       ├── gen.js         # Book list from Fanqie API (rankings, latest, etc.)
+│       ├── gen2.js        # Book list from category/genre API (paginated)
+│       ├── detail.js      # Book detail page: info, genres, suggests, comments
+│       ├── search.js      # Search by keyword
+│       ├── genre.js       # Genre/category listing
+│       ├── toc.js         # Table of contents (chapter list)
+│       ├── chap.js        # Chapter content (with optional OpenAI translation)
+│       ├── comment.js     # Book comments/reviews
+│       └── suggest.js     # Suggestions (same author books)
+├── another-plugin/        # (future) another plugin follows the same layout
+│   ├── plugin.json
+│   ├── icon.png
+│   ├── plugin.zip
+│   └── src/
 ```
+
+### Adding a New Plugin
+
+1. Create a new subfolder (e.g., `myplugin/`) with `plugin.json`, `icon.png`, `src/`, and `plugin.zip`.
+2. Add a new entry to `repository.json` → `data[]` with `path` and `icon` pointing to the raw GitHub URLs for that subfolder.
+3. Commit and push — the plugin is immediately available in the vBook store.
 
 ## vBook Script Runtime
 
