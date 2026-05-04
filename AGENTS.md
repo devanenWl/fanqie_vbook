@@ -36,9 +36,41 @@ This repo hosts multiple vBook plugins. Each plugin lives in its own subfolder.
 
 ### Adding a New Plugin
 
-1. Create a new subfolder (e.g., `myplugin/`) with `plugin.json`, `icon.png`, `src/`, and `plugin.zip`.
-2. Add a new entry to `repository.json` → `data[]` with `path` and `icon` pointing to the raw GitHub URLs for that subfolder.
-3. Commit and push — the plugin is immediately available in the vBook store.
+1. Create a new subfolder (e.g., `myplugin/`) with `plugin.json`, `icon.png`, and `src/`.
+2. Build the ZIP (see below) and place it as `myplugin/plugin.zip`.
+3. Add a new entry to `repository.json` → `data[]` with `path` and `icon` pointing to the raw GitHub URLs for that subfolder.
+4. Commit and push — the plugin is immediately available in the vBook store.
+
+### Building plugin.zip
+
+The ZIP must contain `plugin.json`, `icon.png`, and the `src/` directory at the root level (no wrapper folder). Build from inside the plugin subfolder:
+
+```bash
+cd <plugin-folder>          # e.g. cd fanqie2
+zip -r plugin.zip plugin.json icon.png src/
+```
+
+After any source change, rebuild and commit the ZIP:
+
+```bash
+cd fanqie2
+zip -r plugin.zip plugin.json icon.png src/
+cd ..
+git add fanqie2/plugin.zip
+git commit -m "chore(fanqie2): rebuild plugin.zip"
+git push origin main
+```
+
+The ZIP structure must look like this (verified with `unzip -l plugin.zip`):
+```
+plugin.json
+icon.png
+src/
+src/chap.js
+src/config.js
+src/home.js
+... (all src/*.js files)
+```
 
 ## vBook Script Runtime
 
